@@ -1,0 +1,197 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {{/*  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  */}}
+  <title>Marketing</title>
+</head>
+
+<body>
+  {{/*  <h1>THIS IS THE PREVIEW LIST PAGE</h1>
+  {{ partial "list-header" (dict "Kind" .Kind "Template" "List") }}
+  {{.Content}}
+    <div class="container">
+      <div class="row">
+        <div class="grid-3-columns">
+          {{ range .Pages }}
+          <div>
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><a href="{{.URL}}">{{.Params.seo.title}}</a></h5>
+                {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+                <p class="d-inline-block text-truncate" style="max-width: 250px;">{{.Summary}}</p>
+                <a href="{{.URL}}" class="btn btn-primary">Read more...</a>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>  */}}
+
+
+
+      <div class="contain">
+        <h2>Verajohn Lobby Pages</h2>
+        <div class="row">
+          <div class="row__inner">
+            {{ range .Pages }}
+            <div class="tile">
+              <div class="tile__media">
+                <img class="tile__img" src="https://picsum.photos/250/140" />
+              </div>
+              <div class="tile__details">
+                <div class="tile__title">
+                  <a href="{{.URL}}">{{.Params.seo.title}}</a>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+
+
+</body>
+</html>
+
+<style>
+  /*  .grid-3-columns {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 100%;
+    max-width: 998px;
+    gap: 30px 70px;
+  }  */
+
+body,
+html {
+ padding: 0 10px;
+ margin: 0;
+ background: #0e0f11;
+ color: #ecf0f1;
+ font-family: 'Open Sans', sans-serif;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ width: 100%;
+}
+* {
+ box-sizing: border-box;
+}
+h1 {
+ text-align: center;
+}
+a:link,
+a:hover,
+a:active,
+a:visited {
+ transition: color 150ms;
+ color: #95a5a6;
+ text-decoration: none;
+}
+a:hover {
+ color: #7f8c8d;
+ text-decoration: underline;
+}
+.contain {
+ width: 100%;
+}
+.row {
+ overflow: scroll;
+ overflow-y: hidden;
+ width: 100%;
+}
+.row__inner {
+ transition: 450ms transform;
+ font-size: 0;
+ white-space: nowrap;
+ margin: 70.3125px 0;
+ padding-bottom: 10px;
+}
+.tile {
+ position: relative;
+ display: inline-block;
+ width: 250px;
+ height: 140.625px;
+ margin-right: 10px;
+ font-size: 20px;
+ cursor: pointer;
+ transition: 450ms all;
+ transform-origin: center left;
+}
+.tile__img {
+ width: 250px;
+ height: 140.625px;
+ -o-object-fit: cover;
+ object-fit: cover;
+}
+.tile__details {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ top: 0;
+ font-size: 10px;
+ opacity: 0;
+ background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+ transition: 450ms opacity;
+}
+.tile__details:after,
+.tile__details:before {
+ content: '';
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ display: #000;
+}
+.tile__details:after {
+ margin-top: -25px;
+ margin-left: -25px;
+ width: 50px;
+ height: 50px;
+ border: 3px solid #ecf0f1;
+ line-height: 50px;
+ text-align: center;
+ border-radius: 100%;
+ background: rgba(0, 0, 0, 0.5);
+ z-index: 1;
+}
+.tile__details:before {
+ content: '▶';
+ left: 0;
+ width: 100%;
+ font-size: 30px;
+ margin-left: 7px;
+ margin-top: -18px;
+ text-align: center;
+ z-index: 2;
+}
+.tile:hover .tile__details {
+ opacity: 1;
+}
+.tile__title {
+ position: absolute;
+ bottom: 0;
+ padding: 10px;
+}
+.row__inner:hover {
+ transform: translate3d(-62.5px, 0, 0);
+}
+.row__inner:hover .tile {
+ opacity: 0.3;
+}
+.row__inner:hover .tile:hover {
+ transform: scale(1.5);
+ opacity: 1;
+}
+.tile:hover~.tile {
+ transform: translate3d(125px, 0, 0);
+}
+</style>

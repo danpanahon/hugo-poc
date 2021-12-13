@@ -1,0 +1,9 @@
+<!-- brand specific -->
+{{ $theme := resources.Get "scss/theme/style.scss" }}
+{{ $brand := resources.Get "scss/fontBranding/style.scss" }}
+
+{{ $mainTheme := $theme | resources.ToCSS | minify | fingerprint }}
+{{ $mainBrand := $brand | resources.ToCSS | minify | fingerprint }}
+
+<link rel="stylesheet" href="{{ $mainTheme.RelPermalink }}">
+<link rel="stylesheet" href="{{ $mainBrand.RelPermalink }}">

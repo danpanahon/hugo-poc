@@ -1,0 +1,19 @@
+.g-lobby-tiles h3{
+  margin: 0;
+}
+.g-lobby-tiles .pod-content{
+  position: relative;
+  z-index: 2;
+}
+.g-lobby-tiles .pod-content img {
+  margin-top: 15px;
+}
+.g-lobby-tiles .pods{
+  border: solid 3px transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 9px;
+  min-height: 150px;
+  min-width: 180px;
+  text-align: center;
+}

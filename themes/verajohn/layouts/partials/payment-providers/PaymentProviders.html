@@ -1,0 +1,24 @@
+<div class="g-payment-provider">
+    <div class="d-flex">
+    <p class="txt__primary1 txt--size3">入出金方法</p>
+    </div>
+    <div class="d-flex">
+        <div>
+            {{/*  <img
+            v-for="(provider, index) in paymentProviderImages"
+            :key="index"
+            :src="provider"
+            alt="Provider"
+            >  */}}
+            {{/*  {{ $image := resources.Get "images/payment-providers/1-master-icon.png" }}  */}}
+            {{/*  {{ $image := resources.Get (printf "images/payment-providers/%s" .Params.providers.payment.image) }}  */}}
+            {{/*  {{ with $image }}
+                <img src="{{ ( $image.Resize "42x q10" ).RelPermalink }}" />
+            {{ end }}  */}}
+            {{ range .Site.Data.payment_providers }}
+                {{ $ppImage := resources.Get .image }}
+                <img src='{{$ppImage.RelPermalink}}' class="lazyLoad isLoaded" alt="{{ .alt_text}}"/>
+            {{ end }}
+        </div>
+    </div>
+</div>

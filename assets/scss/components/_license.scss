@@ -1,0 +1,25 @@
+.g-license img{
+  width: 100%;
+  max-width: 50px;
+  max-height: 100px;
+}
+
+@media only screen and (min-width: 280px) {
+  .g-license > div{
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .g-license .license-icon{
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+  .g-license .license-text{
+    -ms-flex: 0 0 80%;
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+}

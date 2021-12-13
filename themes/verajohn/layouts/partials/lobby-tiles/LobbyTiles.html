@@ -1,0 +1,29 @@
+<section id="s-lobby-tiles">
+  <div class="container">
+    <div class="row">
+      <div class="g-lobby-tiles">
+        <div class="d-flex">
+          <div class="h-left">
+            <p class="txt-highlight">
+              {{ .Params.lobby_tiles.lobby_tiles_title }}
+            </p>
+          </div>
+        </div>
+        <div class="d-flex gutter f-wrap">
+          {{ range .Params.lobby_tiles.lobby_list }}
+            <div class="pods">
+              <a class="v-center h-center" href="{{ .link }}">
+                <div class="pod-content">
+                  <h3 class="txt-highlight">
+                    {{ .title }}
+                  </h3>
+                  <img class="pod-feat-img" src="{{ .image }}" alt="alt img">
+                </div>
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

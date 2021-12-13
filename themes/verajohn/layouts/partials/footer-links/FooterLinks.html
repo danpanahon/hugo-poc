@@ -1,0 +1,11 @@
+<section id="s-cta">
+  <div class="row">
+    <div>
+      {{ $footerLogo := resources.Get "/images/footer-verajohn.png" }}
+      {{/*  <img class="cta-logo d-block" src="{{ $footerLogo.RelPermalink }}" alt="footer-site-logo">  */}}
+      {{ partial "footer-links/FooterLinks.html" . }}
+    </div>
+  </div>
+</section>
+
+

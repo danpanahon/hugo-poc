@@ -1,0 +1,22 @@
+<div class="g-banner-slider">
+  <div class="slider">
+    <div>
+      {{/*  <div class="owl-carousel">  */}}
+        <div>
+          <a href="#">
+            {{ $image := resources.Get "images/banner/vjjp_banner.png" }}
+            {{ with $image }}
+                <img src="{{ ( $image.Resize "768x" ).RelPermalink }}" />
+            {{ end }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel();
+    });
+</script>

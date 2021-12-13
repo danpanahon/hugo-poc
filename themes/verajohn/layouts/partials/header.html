@@ -1,0 +1,18 @@
+<header>
+     <nav id="s-nav-bar-main">
+          <div id="nav-home" class="h-left">
+          <a href="https://verajohn.com/ja">
+               {{ $homeIcon := resources.Get "images/home-icon.png" }}
+               <img src="{{ $homeIcon.RelPermalink }}" alt="home">
+          </a>
+          </div>
+
+          <div class="h-center">
+          {{- partial "nav-main-title-logo/NavMainTitleLogo.html" . -}}
+          </div>
+
+          <div class="h-right">
+          {{- partial "button/Button.html" . -}}
+          </div>
+     </nav>
+</header>

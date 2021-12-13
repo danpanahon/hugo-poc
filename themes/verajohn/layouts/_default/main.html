@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+{{/*  <section>
+  <div class="container">
+    <div class="row">
+      {{ partial "banner-slider/BannerSlider.html" . }}
+    </div>
+  </div>
+</section>  */}}
+
+{{/*  <section id="s-games">
+  <div class="container separator-top separator-bottom">
+    <div class="row">
+      {{ partial "game-list/GameList.html" . }}
+    </div>
+  </div>
+</section>  */}}
+
+<section id="s-lobby-tiles">
+  <div class="container">
+    <div class="row">
+      {{ partial "lobby-tiles/LobbyTiles.html" . }}
+    </div>
+  </div>
+</section>
+
+<section id="s-cta">
+  <div class="row">
+    <div>
+      {{ $footerLogo := resources.Get "/images/footer-verajohn.png" }}
+      <img class="cta-logo d-block" src="{{ $footerLogo.RelPermalink }}" alt="footer-site-logo">
+      {{ partial "footer-links/FooterLinks.html" . }}
+    </div>
+  </div>
+</section>
+
+<section id="s-seo-contents">
+  <div class="container">
+    <div class="row">
+      <div class="g-seo-content">
+        {{ partial "seo-content/SEOContent.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

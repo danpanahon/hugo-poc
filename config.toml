@@ -1,0 +1,13 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Preview List'
+theme = 'verajohn'
+sectionPagesMenu = "main"
+[markup.goldmark.renderer]
+unsafe = true
+
+[permalinks]
+    lobby = "/ja/:slug"
+
+[params]
+seoBaseURL = "https://www.verajohn.com/"

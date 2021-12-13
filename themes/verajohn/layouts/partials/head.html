@@ -1,0 +1,21 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ .Params.seo.meta.description }}">
+    <meta name="robots" content="{{ .Params.seo.meta.robots }}">
+    <link rel="canonical" href='{{ print .Site.Params.seoBaseURL .Params.locale "/" .Params.slug }}' />
+    {{ $mainScss := resources.Get "scss/components/style.scss" }}
+    {{ $gridScss := resources.Get "scss/design-pattern/layout-grid.scss" }}
+
+    {{ $mainStyle := $mainScss | resources.ToCSS | minify | fingerprint }}
+    {{ $gridLayout := $gridScss | resources.ToCSS | minify | fingerprint }}
+
+    <link rel="stylesheet" href="{{ $mainStyle.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $gridLayout.RelPermalink }}">
+    {{/*  <link rel="stylesheet" type="text/css" href="/css/owl.theme.css">
+    <link rel="stylesheet" type="text/css" href="/css/owl.carousel.css">  */}}
+    {{ partial "brand.html" . }}
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+</head>

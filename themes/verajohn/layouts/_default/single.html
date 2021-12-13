@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Params.locale }}">
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <main>
+          <div id="content">
+            <section>
+              <div class="container">
+                <div class="row">
+                  {{ partial "banner-slider/BannerSlider.html" . }}
+                </div>
+              </div>
+            </section>
+            {{/*  {{ partial "game-list/GameList.html" . }}  */}}
+            {{ partial "lobby-tiles/LobbyTiles.html" . }}
+            {{/*  {{ partial "footer-links/FooterLinks.html" . }}  */}}
+            {{/*  <div id="content">
+            {{- block "main" . }}{{- end }}
+            </div>  */}}
+            {{- partial "seo-content/SEOContent.html" . -}}
+            <footer id="s-footer-icon-wrapper">
+              <div class="container footer-icons o-hidden">
+                {{- partial "payment-providers/PaymentProviders.html" . -}}
+                {{- partial "game-providers/GameProvider.html" . -}}
+                {{- partial "license/License.html" . -}}
+              </div>
+            </footer>
+            {{- partial "footer-sticky/FooterSticky.html" . -}}
+          </div>
+        </main>
+    </body>
+</html>

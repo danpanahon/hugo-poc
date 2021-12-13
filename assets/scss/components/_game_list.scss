@@ -1,0 +1,11 @@
+.game-list {
+  grid-gap: 10px;
+
+  > div{
+    padding: 10px 0;
+    min-width: 119px;
+  }
+}
+.txt-ellipsis {
+  width: 100px;
+}
